@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { ReactQueryDevtools } from 'react-query-devtools';
+import 'antd/dist/antd.css'
+import PageLayout from './components/Layout/PageLayout';
+import LayoutContextProvider from './contexts/LayoutContext';
+import MonstersContextProvider from './contexts/MonstersContext';
+
+
 
 function App() {
+  const [page, setPage] = useState('monsters');
   return (
+    <>
+    <LayoutContextProvider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img src="img/bgTitle.png"></img>
+      <MonstersContextProvider>
+      <PageLayout>
+        </PageLayout>  
+      </MonstersContextProvider>
     </div>
+    </LayoutContextProvider>
+  
+    <ReactQueryDevtools initialIsOpen={false} />
+    </>
   );
 }
 
