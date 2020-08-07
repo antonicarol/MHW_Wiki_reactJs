@@ -4,7 +4,9 @@ import 'antd/dist/antd.css'
 import PageLayout from './components/Layout/PageLayout';
 import LayoutContextProvider from './contexts/LayoutContext';
 import MonstersContextProvider from './contexts/MonstersContext';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header';
+import './index.css'
 
 
 function App() {
@@ -13,7 +15,7 @@ function App() {
     <>
     <LayoutContextProvider>
     <div className="App">
-      <img src="img/bgTitle.png"></img>
+      <Header></Header>
       <MonstersContextProvider>
       <PageLayout>
         </PageLayout>  

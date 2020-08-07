@@ -11,22 +11,12 @@
   src: url('./fonts/monsterhunter.ttf');
 }
 
-
-
-body {
-  margin: 0;
-  font-family: 'text';
-  background: #222;
-  color: #ddd;
-  text-align: center;
-}
-.App{
-  width: 960px;
-  margin: 0 auto;
+.logo{
+  width:10rem;
 }
 h1{
-  color: #ffff57;
-  font-size: 4em;
+  color: darkblue;
+  font-size: 2em;
   letter-spacing: 2px;
   font-family: 'title';
 }
@@ -71,4 +61,7 @@ button:hover{
 .card h3{
   margin: 10px 0;
   color: #ffff57;
+}
+.monster-icon{
+  width: 0.4rem;
 }

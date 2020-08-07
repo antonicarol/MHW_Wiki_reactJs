@@ -4,6 +4,8 @@ import { LayoutContext } from '../../contexts/LayoutContext';
 import MonstersAsCards from './asCard/MonstersAsCards';
 import MonstersContextProvider, { MonstersContext } from '../../contexts/MonstersContext';
 import MonstersAsTable from './asTable/MonstersAsTable';
+import { Button } from 'antd';
+import { InsertRowBelowOutlined, IdcardOutlined } from '@ant-design/icons';
 
 
 /* 
@@ -17,12 +19,24 @@ import MonstersAsTable from './asTable/MonstersAsTable';
 */
 
 const Monsters = () => {
-    const{seeAs} = useContext(LayoutContext)
+    const{seeAs, toggleSetSeeAs} = useContext(LayoutContext)
     const{status} = useContext(MonstersContext)
+
     
     return ( <>
     <MonstersContextProvider>
-        <FilterMonsters></FilterMonsters>
+        <div className="row">
+            <div className="col-11">
+                <FilterMonsters></FilterMonsters>
+            </div>
+            <div className="col-1">
+                <Button type="primary"
+                 icon={seeAs === 'cards' ? <InsertRowBelowOutlined/> : <IdcardOutlined />}
+                 onClick={()=>{
+                     toggleSetSeeAs()}
+                 }></Button>
+            </div>
+        </div>
         {status === 'error' && (
             <div>Error Feching data</div>
         )}

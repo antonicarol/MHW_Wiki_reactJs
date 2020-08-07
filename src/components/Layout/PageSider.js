@@ -15,23 +15,15 @@ const PageSider = () => {
         style={{ height: '100%' }}
       >
         
-        <SubMenu key="sub1" title="Monsters">
-        <i src="/img/monster-icon.png"></i>
-          <Menu.Item onClick={()=>{
+      <Menu.Item onClick={()=>{
               handleSetPage('monsters');
-              handleSetSeeAs('cards');
-              }} key="1">See as cards</Menu.Item>
-          <Menu.Item onClick={()=>{
-              handleSetPage('monsters');
-              handleSetSeeAs('table');
-              }} key="2">See as table</Menu.Item>
-        </SubMenu>
-        <SubMenu key="sub2"  title="Weapons">
+              }} key="1">Monsters</Menu.Item>
+       {/*  <SubMenu key="sub2"  title="Weapons">
           <Menu.Item key="3">option5</Menu.Item>
         </SubMenu>
         <SubMenu key="sub3" title="Foods">
           <Menu.Item key="4">option9</Menu.Item>
-        </SubMenu>
+        </SubMenu> */}
       </Menu> );
 }
  

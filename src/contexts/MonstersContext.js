@@ -37,18 +37,30 @@ const MonstersContextProvider = (props) => {
         resolvedData,
         latestData
         , status } = usePaginatedQuery(['monsters',type,specie], fetchMonsters);
+    const[detailMonster, setDetailMonster] = useState({});
+    const[showDetailMonster, setShowDetailMonster] = useState(false);
+    
     const handleSetType = (type)=>{
     setType(type);
     }
     const handleSetSpecie = (specie)=>{
         setSpecie(specie);
     }
+    const openDetailMonster =(monster)=>{
+        setDetailMonster(monster);
+        setShowDetailMonster(true);
+    }
+    const closeDetailMonster =()=>{
+        setShowDetailMonster(false);
+    }
     useEffect(()=>{
+        console.log(showDetailMonster)
         fetchMonsters('monster', type, specie); 
-      },[type, specie])
+      },[type, specie, showDetailMonster])
     return ( 
-        <MonstersContext.Provider value={{type, specie, resolvedData, status,
-        handleSetType, handleSetSpecie}}>
+        <MonstersContext.Provider value={{type, specie,
+             resolvedData, status, showDetailMonster, detailMonster,
+        handleSetType, handleSetSpecie, openDetailMonster, closeDetailMonster }}>
             {props.children}
         </MonstersContext.Provider>
      );

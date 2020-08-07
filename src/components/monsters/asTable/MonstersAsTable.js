@@ -21,7 +21,6 @@ const columns = [
 
 const MonstersAsTable = () => {
     const{resolvedData} = useContext(MonstersContext)
-    console.log(resolvedData)
     return ( 
     <div className="row justify-content-between">
 
@@ -36,6 +35,7 @@ const MonstersAsTable = () => {
     <Table.TextHeaderCell>
       Specie
     </Table.TextHeaderCell >
+    <Table.HeaderCell>Icon </Table.HeaderCell>
   </Table.Head>
   <Table.Body height={240}>
    {resolvedData.map(monster => {

@@ -7,7 +7,7 @@ const PageHeader = () => {
     return ( 
       <>
         <div className="logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
           <Menu.Item onClick={()=>handleSetModule('home')} key="1">Home</Menu.Item>
           <Menu.Item onClick={()=>handleSetModule('seek')} key="2">Seek Information</Menu.Item>
           <Menu.Item onClick={()=>handleSetModule('how')}key="3">How its this done?</Menu.Item>

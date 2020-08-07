@@ -1,7 +1,6 @@
 export const filtersSpecies =[
-        ['herbivore','whyverns', 'wingdrake'],
-        [ 'neopteron','fish'],
-        [ 'elder dragon', 'relict', 'fanged beast']
+        ['herbivore','whyverns', 'wingdrake', 'fanged beast'],
+        [ 'fish', 'relict', 'neopteron','elder dragon']
     
 ]
 
